@@ -1,17 +1,17 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  KeyboardAvoidingView,
-  ScrollView,
-  View,
-  Text,
-  Platform,
-  StyleSheet,
-  ViewStyle,
-  StatusBar,
+    KeyboardAvoidingView,
+    Platform,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    View,
+    ViewStyle,
 } from 'react-native';
-import { useTheme } from '../../theme';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { SPACING } from '../../constants/theme';
+import { useTheme } from '../../theme';
 
 interface ScreenProps {
   children: React.ReactNode;
@@ -59,6 +59,7 @@ export const Screen: React.FC<ScreenProps> = ({
         translucent={false}
       />
       <SafeAreaView
+        edges={edges}
         style={[
           styles.safe,
           { backgroundColor: theme.colors.background },
